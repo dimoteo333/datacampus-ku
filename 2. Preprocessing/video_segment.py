@@ -9,8 +9,7 @@ MOV_Directory = 'video.mp4'
 i2 = MOV_Directory
 print(i2)
 clip = mp.VideoFileClip(i2)
-    
-# [필수] 파일 주소 재설정 
+
 sound_file_name = re.sub(pattern='mp4', repl='wav', string=i2)
 print(sound_file_name)
 clip.audio.write_audiofile(sound_file_name)
