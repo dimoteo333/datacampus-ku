@@ -6,6 +6,6 @@
 
 4, 해당 타임 스탬프로 영상 분할 - video_segment.py
 
-5, 분할한 영상에서 face detection - video_face.py
+5, 분할한 영상을 프레임으로 나눈 뒤, face detection하고 이미지 저장 - video_frame_face.py
 
 6, 얼굴에서 하관 부분만 분리 - X
