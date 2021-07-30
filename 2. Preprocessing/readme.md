@@ -9,3 +9,11 @@
 5, 분할한 영상을 프레임으로 나눈 뒤, face detection하고 이미지 저장 - video_frame_face.py
 
 6, 얼굴에서 하관 부분만 분리 - video_frame_face.py
+
+
+#Video_frame_face 문제점
+
+1, 저화질일 때 하관 부분(특히 턱부분)을 잘 crop하지 못함
+
+2, loop가 어디까지 도는 것인지 확인
+
