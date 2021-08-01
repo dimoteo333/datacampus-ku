@@ -1,10 +1,11 @@
 #전처리 단계
 
-1, 앵커가 말하는 부분(앵커 얼굴이 나오는 화면)만 분할 - X
+1, 앵커가 말하는 부분(앵커 얼굴이 나오는 화면)만 분할 - Video_of_one_Anchor.ipynb
 
-  1) face detection이 2명 이상 되었을 때 -> drop out
-  2) 긴 침묵 (video_segment)을 기준으로 crop
-  3) 만약 2로 잘 잘리지 않는다면, stt 사용 고려
+  1) 인물 배경 있는 영상 제거 -> 인물 배경 있는 영상(주로 정치 분야)은 STT로 전처리하는 방식 고려
+  2) 인물 배경 없는 영상 리스트 만들기
+  3) face detection이 2명 이상 되었을 때 -> drop out
+  + 4) 긴 침묵 (video_segment)을 기준으로 crop -> 3번 보완 방식으로 진행할 예정
 
 2, 영상에서 audio 파일 추출 - video_frame_face.py (초반 부분)
 
