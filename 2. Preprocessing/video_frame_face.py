@@ -56,7 +56,7 @@ for i in images:
 
         (x, y, w, h) = face_utils.rect_to_bb(face)
         crop_img = img[shape[1][1]:y+h+int(h/4)*2, shape[1][0]:shape[15][0]]
-        #하관 crop이 잘 안되면 [8]을 [7]로 변경해보기
+
         crop_img = cv2.resize(crop_img, (600,600))
 
     cv2.imwrite("changed_frame %d.jpg" %count, crop_img)
