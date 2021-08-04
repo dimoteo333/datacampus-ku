@@ -24,5 +24,8 @@
 2, lipjpeg-turbo 사용
 
 https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=lucidmaj7&logNo=220769743363
-
 설치해야 하는 것들이 많음...
+
+3, test_frame.py 주의사항
+  1) 주피터 노트북에 Preprocessing에 있는 함수들을 먼저 실행하고 마지막에 돌릴 것
+  2) Switching_moment()에서 timestamp 가져오는 작업이 아직 끝나지 않았음
