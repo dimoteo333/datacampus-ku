@@ -27,7 +27,7 @@ for i in MOV_LIST:
         new_a = re.sub(pattern='.mp4', repl='.wav', string=a)
         new_b = './One_Anch'+'/'+b
         if switch_result[]  > get_duration(new_b): #switch_result에서 원하는 TimeStamp 어떻게 뽑이내지...?
-            ffmpeg_extract_subclip(i, 0, switch_result[], targetname="./CUT_VID/"+i+".mp4")
+            ffmpeg_extract_subclip(i, 0, switch_result[], targetname="./CUT_VID/"+i+".mp4") #timestamp 수정 필요
         else:
             ffmpeg_extract_subclip(i, 0, get_duration(new_b), targetname="./CUT_VID/"+i+".mp4")
 
