@@ -1,10 +1,11 @@
 #전처리 단계
 
-1, 앵커가 말하는 부분(앵커 얼굴이 나오는 화면)만 분할 - Video_of_one_Anchor.ipynb
+1, 앵커가 말하는 부분(앵커 얼굴이 나오는 화면)만 분할
 
-  1) 만약 시작부터 앵커 얼굴이 0명 또는 2명 이상이라면 video drop out -> One_anchor_starts_MOV.ipynb
+  1) 만약 영상 데이터의 길이가 2분을 초과한다면 video drop out -> File_selection.ipynb
+     만약 시작부터 앵커 얼굴이 0명 또는 2명 이상이라면 video drop out -> File_selection.ipynb
   2) 만약 얼굴이 0명 또는 2명 이상이 되면 video cut (time stamp) -> video_face_one.py
-  3) 앵커 목소리가 기자 목소리로 전환될 때 video cut (time stamp) -> 
+  3) 앵커 목소리가 기자 목소리로 전환될 때 video cut (time stamp) -> Detect_Speaker_switching.ipynb
 
 2, 영상에서 audio 파일 추출 - video_segment.py (초반 부분)
 
