@@ -21,3 +21,8 @@
 
 1, frame이 숫자 순서대로가 아니라, 1, 100, 101,,,, 순으로 진행됨 -> sorted로 해결 가능, 전처리 1 해결 후 생각해볼 것.
 
+2, lipjpeg-turbo 사용
+
+https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=lucidmaj7&logNo=220769743363
+
+설치해야 하는 것들이 많음...
