@@ -15,7 +15,7 @@
 
 5, 분할한 영상의 얼굴 부분 crop한 영상 - face_crop_vid.py
 
-6, crop한 영상과 맞는 오디오 합치기 - 
+6, crop한 영상과 맞는 오디오 합치기 - concat_vid_aud.py
 
 7, 완전한 영상과 그에 맞는 text - 
 
