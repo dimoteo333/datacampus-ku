@@ -40,15 +40,17 @@
 
   - 메인 모델의 학습 및 예측을 단어가 아닌 문장 단위로 진행하고자 함
   - 문장 단위 데이터
-    - 유튜브에서 생성되는 자동 자막을 이용해 문장 단위로 alignment
+      - 유튜브에서 생성되는 자동 자막을 이용해 문장 단위로 alignment
 
 ## 사용 데이터
+<img src="https://user-images.githubusercontent.com/87217639/131153084-630fd3d7-f0ff-4530-8470-dfcb55932cc0.jpg"  width="700" height="370">
+
+> https://www.youtube.com/user/pitchforktv
 - 유튜브 영상
-  - Pitchfork의 인터뷰 영상을 크롤링
+  - Pitchfork의 over / under 인터뷰 영상을 크롤링
   - 한 명이 발화하고 있는 영상/음성/텍스트 이용
   - 유튜브 자동 자막을 사용해 영상을 문장 단위로 크롭
   - 영상의 텍스트와 영상의 입모양을 매치시킴
-
 
 
 ## 데이터 전처리
@@ -59,16 +61,29 @@
 - 그 후 동영상을 한 단어의 발음 시간과 맞게 1~2초 내외로 잘라 모델 학습에 이용한다
 
 ## 데이터 Features
-- 일반적으로 발음을 할 때 입술 뿐만 아니라, 턱과 볼 등 하관 전체를 이용하게 된다<br><br>
-![filter](https://user-images.githubusercontent.com/78715821/126628546-a4f9b0bc-4370-468a-b48c-460f1fe713f7.png)
+![output_15_0](https://user-images.githubusercontent.com/87217639/131155569-889d2559-fc76-4204-a760-364010a2a4cf.png)
 
-- 따라서 동영상의 얼굴 전체가 아닌 하관 부분만 Crop을 해서 이용할 것이다
-- 그 후 Crop 된 하관부분의 이미지를 여러 개의 window로 나누어 Video Swin Transformer의 input으로 제공한다<br><br>
-![image](https://user-images.githubusercontent.com/78715821/126631156-3114c608-bb6d-41a6-9ec2-fac37a618651.png)
-  > https://arxiv.org/abs/2106.13230
+- 단어 단위가 아닌, 문장 단위의 영상/텍스트 데이터
+- 얼굴 이외의 부분은 영상 데이터에서 필요하지 않다고 판단
+- 발화 중 얼굴 ROI만을 크롭해 영상 데이터들을 모두 같은 크기로 저장
 
-### 사용할 모델
-- 
+### 사용한 모델
+- 문장 단위로 Lip reading 학습을 진행한 모델
+  <img src="https://user-images.githubusercontent.com/87217639/131153040-f5491e6e-2cb1-4ede-8d9a-75844d00f1c1.jpg"  width="600" height="300">
 
+  - STCNN + Transformer (+ Language Model)
+  - 인코더는 MV-LRS로 단어 단위 분류를 진행하도록 학습
+  - 디코더는 문장으로 이루어진 LRS 데이터셋으로 학습된 Transformer 모델
 
+- 데이터 학습
+  - 부족한 시간 및 데이터로 인해, 영어로 학습되어 있는 기존의 모델에 유튜브 영상을 학습
+  - 영어 화자 유튜브 영상을 Lip reading 모델에 적용
+
+- 학습 결과
+  - WER(에러 수치) 98%
+    - 논문과의 차이점 : 사람 이름, 제품명 등의 고유 명사에 대한 학습이 진행되어 있지 않음
+
+- 한계점 및 활용 방안
+  - 추후 AIHub의 한글 단어 데이터가 공개될 시 한국어 독순술 모델 제작 가능
+  - 입력과 출력, 그리고 사용하는 모델에 따라 실시간 독순술 처리 모델 제작 가능
 
