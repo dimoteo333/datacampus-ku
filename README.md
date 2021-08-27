@@ -76,12 +76,13 @@
   - 폴더 이름 생성 (폴더 생성X)
   - 다운받은 대본 속에서 timeline 가져오기
   - timeline 데이터 사용하여 파생 대본 생성
-  - timeline 데이터를 통해 원본 영상 파일 cutting
+  - timeline 데이터를 통해 원본 영상 파일 cutting하여 파생 영상 생성
   - 얼굴 인식 (얼굴이 1명 인식된 경우, zoom-in/zoom-out이 적용되지 않은 화면일 경우)
   -> 이 2가지에 모두 해당하는 영상이라고 판단될 때 face crop 실시 
-  - mp4 파일에서 wav 음성 파일 추출하기
+  - 파생 영상 파일에서 wav 음성 파일 추출하기
   - 무음 face crop 영상에서 소리 파일 합성하기
   - 초반에 만든 폴더 이름을 사용하여 새 폴더 생성
+  - 새로 만든 폴더에 전처리 완료한 데이터(face crop 영상, 대본) 저장
 
 ## 데이터 Features
 ![output_15_0](https://user-images.githubusercontent.com/87217639/131155569-889d2559-fc76-4204-a760-364010a2a4cf.png)
