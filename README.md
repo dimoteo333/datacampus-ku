@@ -54,11 +54,34 @@
 
 
 ## 데이터 전처리
-![image](https://user-images.githubusercontent.com/78715821/126666663-eff812ca-d669-47a0-befa-f6df8787fc49.png)
-- 뉴스 영상의 경우, 음성과 텍스트의 싱크를 맞추기 위해 forced alignment를 이용한다.
-  > https://web.sas.upenn.edu/phonetics-lab/facilities/ <br>
-  > https://www.speechsciences.or.kr/board/view?b_name=bo_reference&bo_id=17&per_page=15
-- 그 후 동영상을 한 단어의 발음 시간과 맞게 1~2초 내외로 잘라 모델 학습에 이용한다
+- 영상 데이터 -> 텍스트, 이미지, 소리 데이터
+  - 즉, 이렇게 3가지 전처리 파트(텍스트, 이미지, 소리)로 나눌 수 있음
+
+- 텍스트 전처리 핵심 라이브러리
+  - 파이썬 표준 라이브러리
+  
+![image](https://user-images.githubusercontent.com/87643414/131180572-a8c04885-45a9-46b5-8b96-b64bf58251b8.png)
+
+- 이미지 전처리 핵심 라이브러리
+  - OpenCV 
+
+![image](https://user-images.githubusercontent.com/87643414/131178542-13a76b74-efd1-430a-9b99-3a760a509f56.png)
+
+- 소리 전처리 핵심 라이브러리
+  - MoviePy  
+
+![image](https://user-images.githubusercontent.com/87643414/131179386-36196750-3bb0-424c-bb03-1b6cf7c2120f.png)
+
+- 전처리 과정
+  - 폴더 이름 생성 (폴더 생성X)
+  - 다운받은 대본 속에서 timeline 가져오기
+  - timeline 데이터 사용하여 파생 대본 생성
+  - timeline 데이터를 통해 원본 영상 파일 cutting
+  - 얼굴 인식 (얼굴이 1명 인식된 경우, zoom-in/zoom-out이 적용되지 않은 화면일 경우)
+  -> 이 2가지에 모두 해당하는 영상이라고 판단될 때 face crop 실시 
+  - mp4 파일에서 wav 음성 파일 추출하기
+  - 무음 face crop 영상에서 소리 파일 합성하기
+  - 초반에 만든 폴더 이름을 사용하여 새 폴더 생성
 
 ## 데이터 Features
 ![output_15_0](https://user-images.githubusercontent.com/87217639/131155569-889d2559-fc76-4204-a760-364010a2a4cf.png)
